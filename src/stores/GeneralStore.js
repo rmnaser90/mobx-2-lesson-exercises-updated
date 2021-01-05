@@ -14,6 +14,7 @@ export class GeneralStore {
     }
 
     handleInput = (name, value) => {
+        
         this[name] = value
     }
 }

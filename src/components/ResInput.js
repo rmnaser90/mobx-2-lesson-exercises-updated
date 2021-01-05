@@ -3,8 +3,9 @@ import { observer, inject } from 'mobx-react'
 
 
 class ResInput extends Component {
-    inputHandler = (e) => {
-        this.props.GeneralStore.handleInput(e.target.name, e.target.value)
+    inputHandler = ({target}) => {
+        const value = target.type === "number"? parseInt(target.value): target.value
+        this.props.GeneralStore.handleInput(target.name, value)
     }
     render () {
         return (
